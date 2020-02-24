@@ -27,7 +27,7 @@ loop:
     ADD $2,%CX
     OR $5,%SI
     ADD $12,%DX
-    AND $0Xa,%DI
+    XOR $0Xa,%DI
     ADD $5,%AX
 
     JMP loop
