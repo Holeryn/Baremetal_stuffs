@@ -15,5 +15,10 @@ https://wiki.osdev.org/GCC_Cross-Compiler
 
 https://wiki.osdev.org/Bare_Bones
 
+# For try on qemu
+
+$ qemu-system-i386 -cdrom myos.iso
+
+
 # Output:
 ![](https://github.com/Holeryn/Baremetal_stuffs/blob/master/img/BareBones.png)
