@@ -1,4 +1,4 @@
-*A really easy barbone os* 
+#A really easy barbone os 
 
 It is divides in:
 
@@ -7,12 +7,12 @@ It is divides in:
 * linker.ld - The linker script for use c with assembly
 * Makefile - a realy simple makefile for compile the project ($ make all)
 
-*Build the cross-compiler*
+#Build the cross-compiler
 
 https://wiki.osdev.org/GCC_Cross-Compiler
 
-* For more documentation *
+#For more documentation
 
 https://wiki.osdev.org/Bare_Bones
 
-Output:
+#Output:
