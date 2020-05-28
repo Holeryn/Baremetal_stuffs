@@ -16,3 +16,4 @@ https://wiki.osdev.org/GCC_Cross-Compiler
 https://wiki.osdev.org/Bare_Bones
 
 # Output:
+![](https://github.com/Holeryn/Baremetal_stuffs/blob/master/img/BareBones.png)
