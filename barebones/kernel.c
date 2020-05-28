@@ -111,8 +111,6 @@ terminal_writeString(const char *data){
 void kernel_main(void){
   terminal_initialize();
 
-  for(size_t i = 0; i <= VGA_WIDTH * VGA_HEIGHT; i++){
-  	terminal_setcolor(i);
-  	terminal_putchar((char)i);
-  }
+  terminal_setcolor(VGA_COLOR_RED);
+  terminal_writeString("Hello, From the kernel");
 }
