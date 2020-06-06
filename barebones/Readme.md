@@ -3,7 +3,9 @@
 It is divides in:
 
 * boot.s - The multibootloader that set the stack and create a good environment for C and call the kernel, written in assembly
-* kernel.c - The kernel, with some function for work with the vga graphics (Today is obsolete, but always valid for learn)
+* kernel.c - The kernel
+* memory.c - API for allocate memory with bitmaps  
+* terminal.c - API for work with the terminal
 * linker.ld - The linker script for use c with assembly
 * Makefile - a realy simple makefile for compile the project ($ make all)
 
