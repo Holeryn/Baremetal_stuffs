@@ -1,6 +1,6 @@
 // Freestanding haders
-#include "memory.h"
-#include "terminal.h"
+#include "memory/memory.h"
+#include "terminal/terminal.h"
 
 // Check if the compiler thinks you are targeting the wrong operating systems.
 #if defined(__linux__)
