@@ -1,4 +1,4 @@
-# A really barbone os 
+# Another x86 barbone os 
 
 It is divides in:
 
