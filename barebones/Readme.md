@@ -1,4 +1,4 @@
-# A really easy barbone os 
+# A really barbone os 
 
 It is divides in:
 
