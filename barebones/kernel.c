@@ -14,9 +14,10 @@
 
 void kernel_main(void){
   char *s;
+  char *c;
   BM_memory BitmapMemory[CHUNKS];
 
-  // init
+  // initialize the terminal
   terminal_initialize();
   terminal_setcolor(VGA_COLOR_RED);
   BM_init(BitmapMemory);
@@ -29,4 +30,6 @@ void kernel_main(void){
   s[3] = 'l';
   s[4] = 'o';
   terminal_writeString(s);
+
+  s = BM_free(s, BitmapMemory);
 }

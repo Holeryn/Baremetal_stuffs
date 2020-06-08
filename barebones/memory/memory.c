@@ -50,8 +50,22 @@ BM_malloc(BM_memory BitmapMemory[CHUNKS],unsigned int size){
   return NULL;
 }
 
-/*
+// free a block of memory
+// Use a variable freed of course is a UB
 void *
-BM_free(BM_memory BitmapMemory[CHUNKS],unsigned int position){
-  return 1;
-}*/
+BM_free(void *block, BM_memory BitmapMemory[CHUNKS]){
+  for(int i = 0; i <= CHUNKS; i++){
+    if(BitmapMemory[i].address == block){
+      if(sizeof(block) <= PAGE){
+        BitmapMemory[i].status = 0;
+      }else{
+        for(int j = sizeof(block) / PAGE; j >= 0; --j)
+          BitmapMemory[i+j].status = 0;
+      }
+
+      return BitmapMemory[i].address;
+    }
+  }
+
+  return NULL;
+}

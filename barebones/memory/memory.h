@@ -21,4 +21,8 @@ void BM_init(BM_memory BitmapMemory[CHUNKS]);
 // require : your BitmapMemory array, the size of your allocation
 void *BM_malloc(BM_memory BitmapMemory[CHUNKS],unsigned int size);
 
+// free a block of memory
+// Use a variable freed of course is a UB
+void *BM_free(void *block, BM_memory BitmapMemory[CHUNKS]);
+
 #endif
