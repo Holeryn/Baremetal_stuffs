@@ -1,16 +1,20 @@
 #!/bin/bash
-i686-elf-as boot.s -o boot.o
-i686-elf-gcc -c kernel.c -o kernel.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
-i686-elf-gcc -c memory/memory.c -o memory/memory.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
-i686-elf-gcc -c terminal/terminal.c -o terminal/terminal.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
-i686-elf-gcc -T linker.ld -o myos.bin -ffreestanding -O2 -nostdlib boot.o terminal/terminal.o kernel.o memory/memory.o -L libcc.a
+CC=i686-elf-gcc
+CC_FLAGS=-std=gnu99 -O2 -Wall -Wextra
+AS=i686-elf-as
+
+${AS} boot.s -o boot.o
+${CC} -c kernel.c -o kernel.o ${CC_FLAGS} -ffreestanding
+${CC} -c memory/memory.c -o memory/memory.o ${CC_FLAGS} -ffreestanding
+${CC} -c terminal/terminal.c -o terminal/terminal.o ${CC_FLAGS} -ffreestanding
+${CC} -T linker.ld -o myos.bin -ffreestanding -O2 -nostdlib boot.o terminal/terminal.o kernel.o memory/memory.o -L libcc.a
 
 if [ ! -d "isodir" ]; then
-	mkdir isodir
+    mkdir isodir
 fi
 
 if [ ! -d "isodir/boot" ]; then
-	mkdir mkdir isodir/boot
+    mkdir mkdir isodir/boot
 fi
 
 if [ ! -d "isodir/boot/grub" ]; then
