@@ -7,7 +7,16 @@ It is divides in:
 * memory.c - API for allocate memory with bitmaps  
 * terminal.c - API for work with the terminal
 * linker.ld - The linker script for use c with assembly
-* Makefile - a realy simple makefile for compile the project ($ make all)
+* compile.sh - a bash script for compile,assemble and link the operative system
+
+# Compile, link and assemble the operating system
+$ bash compile.sh
+
+or
+
+$chmod +x compile.sh
+
+./compile.sh
 
 # Build the cross-compiler
 
