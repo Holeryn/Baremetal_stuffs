@@ -14,9 +14,9 @@ $ bash compile.sh
 
 or
 
-$chmod +x compile.sh
+$ chmod +x compile.sh
 
-./compile.sh
+$ ./compile.sh
 
 # Build the cross-compiler
 
