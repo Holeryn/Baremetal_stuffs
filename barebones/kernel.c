@@ -14,7 +14,6 @@
 
 void kernel_main(void){
   char *s;
-  char *c;
   BM_memory BitmapMemory[CHUNKS];
 
   // initialize the terminal

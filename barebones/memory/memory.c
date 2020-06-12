@@ -28,6 +28,8 @@ BM_init(BM_memory BitmapMemory[CHUNKS]){
 // Allocate memory for something (yeah generic type gne gne gne)
 void *
 BM_malloc(BM_memory BitmapMemory[CHUNKS],unsigned int size){
+  BM_init(BitmapMemory);
+
   for(int i = 0; i <= CHUNKS; i++){
     if(BitmapMemory[i].status == 0){
       if(size <= PAGE){
@@ -54,6 +56,8 @@ BM_malloc(BM_memory BitmapMemory[CHUNKS],unsigned int size){
 // Use a variable freed of course is a UB
 void *
 BM_free(void *block, BM_memory BitmapMemory[CHUNKS]){
+  BM_init(BitmapMemory);
+
   for(int i = 0; i <= CHUNKS; i++){
     if(BitmapMemory[i].address == block){
       if(sizeof(block) <= PAGE){
