@@ -8,6 +8,8 @@ It is divides in:
 * terminal.c - API for work with the terminal
 * linker.ld - The linker script for use c with assembly
 * compile.sh - a bash script for compile,assemble and link the operative system
+* io.s - a wrapper for the out istruction
+* cursor.c - function for move the cursor
 
 # Compile, link and assemble the operating system
 $ bash compile.sh
