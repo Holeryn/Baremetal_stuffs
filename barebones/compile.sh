@@ -1,7 +1,6 @@
-#!/bin/bash
-CC=i686-elf-gcc
-CC_FLAGS=-std=gnu99 -O2 -Wall -Wextra
-AS=i686-elf-as
+CC = i686-elf-gcc
+CC_FLAGS = -std=gnu99 -O2 -Wall -Wextra
+AS = i686-elf-as
 
 ${AS} boot.s -o boot.o
 ${AS} io.s -o io.o
@@ -10,18 +9,18 @@ ${CC} -c kernel.c -o kernel.o ${CC_FLAGS} -ffreestanding
 ${CC} -c serial/serial.c -o serial.o ${CC_FLAGS} -ffreestanding
 ${CC} -c memory/memory.c -o memory/memory.o ${CC_FLAGS} -ffreestanding
 ${CC} -c terminal/terminal.c -o terminal/terminal.o ${CC_FLAGS} -ffreestanding
-${CC} -T linker.ld -o myos.bin -ffreestanding -O2 -nostdlib cursor.o boot.o terminal/terminal.o kernel.o serial.o memory/memory.o -L libcc.a
+${CC} -T linker.ld -o myos.bin -ffreestanding -O2 -nostdlib boot.o io.o cursor.o kernel.o serial.o memory/memory.o terminal/terminal.o -L libcc.a
 
 if [ ! -d "isodir" ]; then
-    mkdir isodir
+	mkdir isodir
 fi
 
 if [ ! -d "isodir/boot" ]; then
-    mkdir mkdir isodir/boot
+	mkdir mkdir isodir/boot
 fi
 
 if [ ! -d "isodir/boot/grub" ]; then
-    mkdir isodir/boot/grub
+	mkdir isodir/boot/grub
 fi
 
 cp myos.bin isodir/boot/
