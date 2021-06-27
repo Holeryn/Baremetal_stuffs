@@ -1,6 +1,6 @@
-CC = i686-elf-gcc
-CC_FLAGS = -std=gnu99 -O2 -Wall -Wextra
-AS = i686-elf-as
+CC=i686-elf-gcc
+CC_FLAGS=-std=gnu99 -O2 -Wall -Wextra
+AS=i686-elf-as
 
 ${AS} boot.s -o boot.o
 ${AS} io.s -o io.o
