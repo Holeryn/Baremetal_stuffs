@@ -1,5 +1,4 @@
 #include "lgdt.h"
-#include "reloadsegments.h"
 
 #define NUMBER_OF_SEGMENTS 3
 
