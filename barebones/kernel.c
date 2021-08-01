@@ -1,6 +1,7 @@
-// Freestanding haders
 #include "memory/memory.h"
 #include "terminal/terminal.h"
+#include "segmentation/segmentation.h"
+
 
 // Check if the compiler thinks you are targeting the wrong operating systems.
 #if defined(__linux__)
@@ -21,13 +22,16 @@ void kernel_main(void){
   terminal_setcolor(VGA_COLOR_RED);
   BM_init(BitmapMemory);
 
+  // Load the global descriptor table
+  load_gdt();
+
   // allocate memory for s
   s = BM_malloc(BitmapMemory,PAGE);
   s[0] = 'H';
-  s[1] = 'e';
-  s[2] = 'l';
-  s[3] = 'l';
-  s[4] = 'o';
+  s[1] = 'A';
+  s[2] = 'C';
+  s[3] = 'K';
+  s[4] = '!';
   terminal_writeString(s);
 
   s = BM_free(s, BitmapMemory);

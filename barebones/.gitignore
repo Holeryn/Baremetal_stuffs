@@ -2,3 +2,5 @@
 *.o
 isodir
 isodir/*
+segmentation/*
+segmentation/*.o
