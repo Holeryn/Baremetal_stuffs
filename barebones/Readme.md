@@ -1,17 +1,5 @@
 # Another x86 barbone "os"
 
-It is divides in:
-
-* boot.s - The multibootloader that set the stack and create a good environment for C and call the kernel, written in assembly
-* kernel.c - The kernel
-* memory.c - API for allocate memory with bitmaps  
-* terminal.c - API for work with the terminal
-* linker.ld - The linker script for use c with assembly
-* compile.sh - a bash script for compile,assemble and link the operative system
-* io.s - a wrapper for the out istruction
-* cursor.c - function for move the cursor
-* serial.c - the serial driver
-
 # Compile, link and assemble the operating system
 $ bash compile.sh
 
@@ -32,7 +20,3 @@ https://wiki.osdev.org/Bare_Bones (off course is not just a copy of the barebone
 # For try on qemu
 
 $ qemu-system-i386 -cdrom myos.iso
-
-
-# Output:
-![](https://github.com/Holeryn/Baremetal_stuffs/blob/master/img/BareBones.png)
