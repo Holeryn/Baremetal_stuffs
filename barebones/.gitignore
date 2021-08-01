@@ -3,5 +3,5 @@ myos.bin
 *.o
 isodir
 isodir/*
-segmentation/*
+segmentation/*~
 segmentation/*.o
