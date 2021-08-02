@@ -1,5 +1,5 @@
 CC=i686-elf-gcc
-CC_FLAGS=-std=gnu99 -O2 -Wall -Wextra --enable-default-pie
+CC_FLAGS=-std=gnu99 -O2 -Wall -Wextra
 AS=i686-elf-as
 
 ${AS} boot.s -o boot.o
