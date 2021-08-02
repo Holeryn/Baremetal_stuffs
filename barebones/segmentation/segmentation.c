@@ -5,10 +5,6 @@
 #define TYPE_RX 0x9A // Read and execute
 #define TYPE_RW 0x92 // Read and write
 
-// macro that gives the size of n segment
-// the GDT/LDT is an array of 8 byte segment descriptor
-#define S_SEGMENT(n) 8*n
-
 void load_gdt(void){
   gdt_entry_t gdt[NUMBER_OF_SEGMENTS];
 
