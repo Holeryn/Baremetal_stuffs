@@ -1,6 +1,7 @@
 #include "memory/memory.h"
 #include "terminal/terminal.h"
 #include "segmentation/segmentation.h"
+#include "pic/pic.h"
 
 
 // Check if the compiler thinks you are targeting the wrong operating systems.
@@ -19,20 +20,16 @@ void kernel_main(void){
 
   // initialize the terminal
   terminal_initialize();
-  terminal_setcolor(VGA_COLOR_RED);
+  terminal_setcolor(VGA_COLOR_WHITE);
   BM_init(BitmapMemory);
+  terminal_writeString("Initialized the terminal...\n");
 
   // Load the global descriptor table
+  terminal_writeString("Loading GDT...\n");
   load_gdt();
 
-  // allocate memory for s
-  s = BM_malloc(BitmapMemory,PAGE);
-  s[0] = 'H';
-  s[1] = 'A';
-  s[2] = 'C';
-  s[3] = 'K';
-  s[4] = '!';
-  terminal_writeString(s);
+  // Initialize PIC
+  terminal_writeString("Remapping PIC...\n");
+  pic_remap(0,0xF);
 
-  s = BM_free(s, BitmapMemory);
 }
